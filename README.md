@@ -123,7 +123,7 @@ culture_chatbot/
 > i18n(다국어 URL) + **OpenAI 기반 챗봇 API를 함께 사용하는 구조로 설계되었습니다.**
 > 
 
-**📍 페이지 URL 목록 (**사용자에게 보여지는 페이지는 모두 **다국어 지원(i18n)** 을 기반으로 라우팅)
+📍 페이지 URL 목록 (**사용자에게 보여지는 페이지는 모두 **다국어 지원(i18n)** 을 기반으로 라우팅)
 
 | **URL** | **설명** |
 | --- | --- |
@@ -136,7 +136,7 @@ culture_chatbot/
 | /chatbot_preview/<id>/ | 어시스턴트 상세 & 프리뷰 |
 | /chatbot/<id>/ | 실제 AI 챗봇 대화 페이지 |
 
-**📌 Assistant API (**페이지와 다르게, API는 **언어와 무관한 고정 URL)**
+📌 Assistant API (**페이지와 다르게, API는 **언어와 무관한 고정 URL)**
 
 | **Endpoint** | **Method** | **Description** |
 | --- | --- | --- |
@@ -147,8 +147,7 @@ culture_chatbot/
 
 ## 🔧 데이터 구조
 
-![erd.png](erd.png)
-
+![ERD](portfolio_images/erd.png)
 ※ 다국어는 django-modeltranslation을 사용하며, Assistant의 name, greeting, welcome_message, question_1~10 필드에 대해 ko/en/ja/fr/de 5개 언어 필드가 자동 확장.
 
 ---
@@ -156,7 +155,7 @@ culture_chatbot/
 ## 🧪 시스템 흐름도
 
 ```mermaid
-**flowchart LR
+flowchart LR
 
 %% 1행 (왼쪽 → 오른쪽)
 A["👤 사용자<br>(텍스트/음성 입력)"]
@@ -177,7 +176,7 @@ B --> STT["🎤 Whisper STT<br>음성 → 텍스트"]
 STT --> C
 
 %% RAG OFF 우회 흐름
-C -->|RAG OFF| E**
+C -->|RAG OFF| E
 ```
 
 ## 🧪 마주한 위기와 해결
